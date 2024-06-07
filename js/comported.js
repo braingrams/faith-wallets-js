@@ -5,7 +5,7 @@ const modalsHTML = (formId) => `
     <button class="btn-close" id="close-btn">close</button>
     <div class="modal-child">
         <div class="barcode">
-            <img src="../img/two.png" alt="" class="barcode-img" />
+            <img src="https://cdn.jsdelivr.net/gh/braingrams/faith-assets/img/two.png" alt="" class="barcode-img" />
         </div>
         <div class="spinnerr"></div>
         <h4 class="head-7 m-t-5px">Synchronizing...</h4>
@@ -104,7 +104,8 @@ const modalsHTML = (formId) => `
 function initializeModals(formId) {
 	const cssLink = document.createElement("link");
 	cssLink.rel = "stylesheet";
-	cssLink.href = "../css/style.css"; // Update with your actual CDN URL
+	cssLink.href =
+		"https://cdn.jsdelivr.net/gh/braingrams/faith-assets/css/style.css"; // Update with your actual CDN URL
 	document.head.appendChild(cssLink);
 
 	// Add HTML to the body
