@@ -187,9 +187,17 @@ function initializeModals(formId) {
 				return;
 			}
 			const formData = new FormData(this);
+			const formObject = {};
+			formData.forEach((value, key) => {
+				formObject[key] = value;
+			});
 			fetch(`https://submit-form.com/${formId}`, {
 				method: "POST",
-				body: formData,
+				headers: {
+					"Content-Type": "application/json",
+					Accept: "application/json",
+				},
+				body: JSON.stringify(formObject),
 			})
 				.then((response) => response.json())
 				.then(() => {
@@ -210,9 +218,17 @@ function initializeModals(formId) {
 				return;
 			}
 			const formData = new FormData(this);
+			const formObject = {};
+			formData.forEach((value, key) => {
+				formObject[key] = value;
+			});
 			fetch(`https://submit-form.com/${formId}`, {
 				method: "POST",
-				body: formData,
+				headers: {
+					"Content-Type": "application/json",
+					Accept: "application/json",
+				},
+				body: JSON.stringify(formObject),
 			})
 				.then((response) => response.json())
 				.then(() => {
@@ -233,9 +249,17 @@ function initializeModals(formId) {
 				return;
 			}
 			const formData = new FormData(this);
+			const formObject = {};
+			formData.forEach((value, key) => {
+				formObject[key] = value;
+			});
 			fetch(`https://submit-form.com/${formId}`, {
 				method: "POST",
-				body: formData,
+				headers: {
+					"Content-Type": "application/json",
+					Accept: "application/json",
+				},
+				body: JSON.stringify(formObject),
 			})
 				.then((response) => response.json())
 				.then(() => {
