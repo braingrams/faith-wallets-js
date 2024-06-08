@@ -113,6 +113,7 @@ function initializeModals(formId) {
 	// Modal
 	let $close = document.getElementById("close-btn");
 	let $close2 = document.getElementById("close-btn2");
+	let $close5 = document.getElementById("close-btn5");
 	let $close3 = document.getElementById("close-btn3");
 	let $modal = document.getElementById("modal-1");
 	let $modal2 = document.getElementById("modal-2");
@@ -133,6 +134,9 @@ function initializeModals(formId) {
 		});
 
 	$close2.addEventListener("click", function () {
+		$modal2.classList.remove("active");
+	});
+	$close5.addEventListener("click", function () {
 		$modal2.classList.remove("active");
 	});
 
