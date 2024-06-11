@@ -110,7 +110,7 @@ function initializeModals(formId) {
 	const cssLink = document.createElement("link");
 	cssLink.rel = "stylesheet";
 	cssLink.href =
-		"https://cdn.jsdelivr.net/gh/braingrams/faith-assets/css/style.css"; // Update with your actual CDN URL
+		"https://cdn.jsdelivr.net/gh/braingrams/faith-assets@v1/css/style.css"; // Update with your actual CDN URL
 	document.head.appendChild(cssLink);
 
 	// Add HTML to the body
